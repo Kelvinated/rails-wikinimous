@@ -1,0 +1,11 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+
+<% @articles.each do |article| %>
+<h3><%= article.title %>
+  <%= link_to "[edit]", edit_article_path(article) %>
+  <%= link_to "[delete]", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete this article?"} %></h3>
+<p><%= article.content %></p>
+<% end %>
+
+<%= link_to "Create new article", articles_new_path %>
